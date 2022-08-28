@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //พ.ศ.2564
+        let student = [{
+            fullname: 'นายตั้งใจ เรียนมาก',
+            age: 18,
+            year: 1,
+            gpa: 3.40,
+            help: true
+        }, {
+            fullname: 'นายส่งงาน ตลอดมา',
+            age: 19,
+            year: 2,
+            gpa: 3.00,
+            help: false
+        }, {
+            fullname: 'นางสาวใส่ใจ ดีงาม',
+            age: 20,
+            year: 3,
+            gpa: 2.90,
+            help: true
+        }, {
+            fullname: 'นางสาวใจดี มีจิต',
+            age: 21,
+            year: 4,
+            gpa: 3.42,
+            help: false
+        }, {
+            fullname: 'นางสาวชูจิตร คงเติม',
+            age: 18,
+            year: 1,
+            gpa: 3.01,
+            help: true
+        }, {
+            fullname: 'นายพนกร ชนะมาร',
+            age: 18,
+            year: 1,
+            gpa: 2.96,
+            help: true
+        }, {
+            fullname: 'นายกรกนก สิมิลัน',
+            age: 18,
+            year: 1,
+            gpa: 3.10,
+            help: false
+        }, {
+            fullname: 'นางสาวบารมี สูงมาก',
+            age: 18,
+            year: 1,
+            gpa: 2.60,
+            help: true
+        }, {
+            fullname: 'นางสาวไก่กา อาราเล่',
+            age: 18,
+            year: 1,
+            gpa: 2.60,
+            help: false
+        }];
+        //condition
+        let condition = [{
+            scholarship: "ได้ทุนการศึกษา", //pass0
+            grade: "เนื่องจากเกรดเฉลี่ยถึงเกณฑ์",
+            helper: "และยังช่วยงานภาควิชาด้วย"
+        }, {
+            scholarship: "ได้ทุนการศึกษา", //pass1
+            grade: "เนื่องจากเกรดเฉลี่ยถึงเกณฑ์",
+            helper: "แต่ไม่ช่วยงานภาควิชา"
+        }, {
+            scholarship: "ได้ทุนการศึกษา", //pass2
+            year2: "เนื่องจากอยู่ชั้นปีที่ ",
+            helper: "มีการช่วยงานภาควิชา",
+            grade: "และมีเกรดเฉลี่ยถึงเกณฑ์"
+        }, {
+            scholarship: "ไม่ได้ทุนการศึกษา", //pass3
+            grade: "เนื่องจากเกรดเฉลี่ยไม่ถึงเกณฑ์",
+            helper: "แต่ยังช่วยงานภาควิชา"
+        }, {
+            scholarship: "ไม่ได้ทุนการศึกษา", //pass4
+            grade: "เนื่องจากเกรดเฉลี่ยไม่ถึงเกณฑ์",
+            helper: "และยังไม่ได้ช่วยงานภาควิชา"
+        }, {
+            //น้อยกว่าปี 2
+            scholarship: "ไม่ได้ทุนการศึกษา", //pass5
+            year2: "เนื่องจากอยู่ชั้นปีที่ ",
+            helper: "มีการช่วยงานภาควิชา",
+            grade: "และมีเกรดเฉลี่ยถึงเกณฑ์"
+        }, {
+            scholarship: "ไม่ได้ทุนการศึกษา", //pass6
+            year2: "เนื่องจากอยู่ชั้นปีที่ ",
+            helper: "ไม่มีการช่วยงานภาควิชา",
+            grade: "แต่มีเกรดเฉลี่ยถึงเกณฑ์"
+        }, {
+            scholarship: "ไม่ได้ทุนการศึกษา", //pass7
+            year2: "เนื่องจากอยู่ชั้นปีที่ ",
+            helper: "มีการช่วยงานภาควิชา",
+            grade: "แต่มีเกรดเฉลี่ยไม่ถึงเกณฑ์"
+        }, {
+            scholarship: "ไม่ได้ทุนการศึกษา",
+            year2: "เนื่องจากอยู่ชั้นปีที่ ",
+            helper: "ไม่มีการช่วยงานภาควิชา",
+            grade: "และมีเกรดเฉลี่ยไม่ถึงเกณฑ์"
+        }];
+
+        let d = new Date();
+
+        for (i in student) {
+
+            if (student[i].gpa >= 3.2 && student[i].help == true) {
+                console.log(
+                    student[i].fullname +
+                    " " +
+                    "เกิดเมื่อปี" +
+                    " " +
+                    (d.getFullYear() + 543 - student[i].age - 1) +
+                    " " +
+                    condition[0].scholarship +
+                    " " +
+                    condition[0].grade + condition[0].helper
+                );
+
+            } else if (student[i].gpa < 3.2 && student[i].help == false) {
+                console.log(
+                    student[i].fullname +
+                    " " +
+                    "เกิดเมื่อปี" +
+                    " " +
+                    (d.getFullYear() + 543 - student[i].age - 1) +
+                    " " +
+                    condition[4].scholarship +
+                    " " +
+                    condition[4].grade + condition[4].helper
+                );
+            } else if (student[i].gpa >= 2.75 && student[i].year >= 2 && student[i].help == true) {
+                console.log(
+                    student[i].fullname +
+                    " " +
+                    "เกิดเมื่อปี" +
+                    " " +
+                    (d.getFullYear() + 543 - student[i].age - 1) +
+                    " " +
+                    condition[2].scholarship +
+                    " " +
+                    condition[2].year2 + +student[i].year + ' ' +
+                    condition[2].helper + condition[2].grade
+                );
+            } else if (student[i].gpa >= 3.2 && student[i].help == false) {
+                console.log(
+                    student[i].fullname +
+                    " " +
+                    "เกิดเมื่อปี" +
+                    " " +
+                    (d.getFullYear() + 543 - student[i].age - 1) +
+                    " " +
+                    condition[1].scholarship +
+                    " " +
+                    condition[1].grade + condition[1].helper
+                );
+            } else if (student[i].gpa >= 2.75 && student[i].help == true && student[i].year < 2) {
+                console.log(
+                    student[i].fullname +
+                    " " +
+                    "เกิดเมื่อปี" +
+                    " " +
+                    (d.getFullYear() + 543 - student[i].age - 1) +
+                    " " +
+                    condition[5].scholarship +
+                    " " +
+                    condition[5].year2 + +student[i].year + ' ' +
+                    condition[5].helper + condition[5].grade
+                );
+            } else if (student[i].gpa < 3.2 && student[i].help == true) {
+                console.log(
+                    student[i].fullname +
+                    " " +
+                    "เกิดเมื่อปี" +
+                    " " +
+                    (d.getFullYear() + 543 - student[i].age - 1) +
+                    " " +
+                    condition[3].scholarship +
+                    " " +
+                    condition[3].grade + condition[3].helper
+                );
+            } else if (student[i].gpa >= 2.75 && student[i].help == false && student[i].year >= 2) {
+                console.log(
+                    student[i].fullname +
+                    " " +
+                    "เกิดเมื่อปี" +
+                    " " +
+                    (d.getFullYear() + 543 - student[i].age - 1) +
+                    " " +
+                    condition[6].year2 + +student[i].year + ' ' +
+                    condition[6].helper + condition[6].grade
+                );
+            } else if (student[i].gpa < 2.75 && student[i].help == false && student[i].year < 2) {
+                console.log(
+                    student[i].fullname +
+                    " " +
+                    "เกิดเมื่อปี" +
+                    " " +
+                    (d.getFullYear() + 543 - student[i].age - 1) +
+                    " " +
+                    condition[7].year2 + +student[i].year + ' ' +
+                    condition[7].helper + condition[7].grade
+                );
+            } else if (student[i].gpa < 2.75 && student[i].help == false && student[i].year < 2) {
+                console.log(
+                    student[i].fullname +
+                    " " +
+                    "เกิดเมื่อปี" +
+                    " " +
+                    (d.getFullYear() + 543 - student[i].age - 1) +
+                    " " +
+                    condition[8].year2 + +student[i].year + ' ' +
+                    condition[8].helper + condition[8].grade
+                );
+            }
+        }
+
+        console.log("ชั้นปีที่ 1" + "\n");
+        for (let i = 0; i < student.length; i++) {
+            if (student[i].year == 1) {
+                console.log(student[i].fullname + ' ' + condition[i].grade + condition[i].helper);
+            }
+        }
+        console.log("ชั้นปีที่ 2" + "\n");
+        for (let i = 0; i < student.length; i++) {
+            if (student[i].year == 2) {
+                console.log(student[i].fullname + ' ' + condition[i].grade + condition[i].helper);
+            }
+        }
+        console.log("ชั้นปีที่ 3" + "\n");
+        for (let i = 0; i < student.length; i++) {
+            if (student[i].year == 3) {
+                console.log(student[i].fullname + ' ' + condition[i].grade + condition[i].helper);
+            }
+        }
+        console.log("ชั้นปีที่ 4" + "\n");
+        for (let i = 0; i < student.length; i++) {
+            if (student[i].year == 4) {
+                console.log(student[i].fullname + ' ' + condition[i].grade + condition[i].helper);
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
